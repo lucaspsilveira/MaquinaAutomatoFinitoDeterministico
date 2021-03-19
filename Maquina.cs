@@ -54,7 +54,7 @@ public class Maquina
         string final;
         do
         {
-            Console.WriteLine("Insira quais estados serão o finais, separados por vírgula - Após pressione ENTER");
+            Console.WriteLine("Insira quais estados serão finais, separados por vírgula - Após, pressione ENTER");
             final = Console.ReadLine();
             finais = final.Split(",");
             var res = Estados.Intersect(finais);
@@ -65,14 +65,14 @@ public class Maquina
     private void ConfigurarAlfabeto()
     {
         string alfabetoLeitura;
-        Console.WriteLine("Insira qual estado será o alfabeto, separado por vírgula - Após pressione ENTER");
+        Console.WriteLine("Insira qual será o alfabeto, separado por vírgula - Após pressione ENTER");
         alfabetoLeitura = Console.ReadLine();
 
         Alfabeto = alfabetoLeitura.Trim().Split(",");
     }
     private void ConfigurarTransicoes()
     {
-        Console.WriteLine("Nessa etapa você deve informar para cada estado o símbolo de entrada e o estado de transição. Caso tenha terminado o mapeamento ou não desejas mapear para o estado informado estado, digite proximo.");
+        Console.WriteLine("Nessa etapa você deve informar para cada estado o símbolo de entrada e o estado de transição. \nCaso tenha terminado o mapeamento ou não desejas mapear para o estado informado, digite proximo.");
         Dictionary<string, Dictionary<string, string>> transicoes = new Dictionary<string, Dictionary<string, string>>();
         foreach (string estado in Estados)
         {
